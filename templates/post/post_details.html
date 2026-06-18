@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div>
+    <h1>{{post.title}}</h1>
+    <h3>{{post.author.first_name}} {{post.author.last_name}}</h3>
+    {% if user == post.author or user.is_superuser%}
+        <a href="{% url 'edit-post' pid=post.pk %}"><button> {% trans 'Изменить' %} </button></a>
+        <a href="{% url 'delete-post' pid=post.pk %}"><button> {% trans 'Удалить' %} </button></a>
+    {% endif %}
+    <p>{{post.time_stamp}}</p>
+    {% if images %}
+        <div class="images">
+            {% for image in images %}
+                <img src="{{image.file.url}}" alt="{{image.name}}" width="300px">
+            {% endfor %}
+        </div>
+    {% endif %}
+    <p>{{post.content}}</p>
+    {% if post.edited %}
+        <p>{% trans 'Изменено' %}</p>
+    {% endif %}
+</div>
+{% endblock %}

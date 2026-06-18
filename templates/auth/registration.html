@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div>
+    <h1>Регистрация</h1>
+    <form  method="post">
+        {% csrf_token %}
+        <label for="">Имя:</label>
+        {{form.first_name}}
+        <label for="">Фамилия:</label>
+        {{form.last_name}}
+        <label for="">Почта:</label>
+        {{form.email}}
+        <label for="">Пароль:</label>
+        {{form.password1}}
+        <label for="">Подтверждение пароля:</label>
+        {{form.password2}}
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</div>
+{% endblock %}

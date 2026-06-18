@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.post{
+    border: 1px solid black;
+    margin: 10px 50px;
+    padding: 10px;
+}

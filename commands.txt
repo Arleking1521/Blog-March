@@ -1,0 +1,55 @@
+Создание виртуальной среды:
+python -m venv myvenv - windows
+py -3.13 -m venv myvenv - если прошлая команда на Windows выдает просто Python, без создания виртуальной среды
+python3 -m venv myvenv - Linux/MacOS
+
+Активация виртуальной среды:
+myvenv\Scripts\activate - windows
+source myvenv/bin/activate - Linux/MacOS
+
+Установка модулей питона в виртуальную среду:
+pip install django psycopg2
+
+django - фреймворк для написания back-end
+psycopg2 - модуль для подключения базы данных PostgreSQL (Windows)
+psycopg2-binary - модуль для подключения базы данных PostgreSQL (Linux/MacOS)
+
+Просмотр модулей через терминал:
+pip list
+
+Экспорт списка пакетов с версиями:
+pip freeze > requirements.txt
+
+Установка пакетов из requirements.txt:
+pip install -r requirements.txt
+
+Создание ядра проекта:
+django-admin startproject core .
+
+Выгрузка миграций в БД:
+python manage.py migrate
+
+Создание приложения:
+python manage.py startapp post
+
+Сбор миграций (применять при изменении моделей):
+python manage.py makemigrations
+
+Запуск сервера:
+python manage.py runserver
+
+Остановка сервера:
+ctrl+c - windows/Linux
+command+c - MacOS
+
+Создание первого суперпользователя:
+python manage.py createsuperuser
+Username (leave blank to use 'user'): admin
+Email address: admin@admin.kz
+Password: admin (Не отображается при вводе)
+Password (again): admin (Не отображается при вводе)
+The password is too similar to the username.
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
